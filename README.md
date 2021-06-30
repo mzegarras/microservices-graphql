@@ -68,3 +68,22 @@ query {
 }
 
 ```
+
+### Query 3: Listar clientes, con cuentas y movimientos
+```GraphQL
+query {
+  customers {
+    id
+    name
+    accounts {
+      id
+      number
+      transactions {
+        id
+        type
+        amount
+      }
+    }
+  }
+}
+```

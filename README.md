@@ -10,7 +10,7 @@ ms-customers  | Microservicer customers
 ms-graphql | GraphQL - Apollo Server
 
 ## Endpoints
-Microservice  | Endpoint
-------------- | -------------
-Listar cuentas| GET /accounts?type=DNI&number=11111111
-Listar transacciones por cuenta| GET accounts/\<accountId>/transactions
+Microservice  | Descripción  | Endpoint
+------------- | ------------- | -------------
+Accounts | Listar cuentas| GET /accounts?type=DNI&number=11111111
+Accounts | Listar transacciones por cuenta| GET accounts/\<accountId>/transactions

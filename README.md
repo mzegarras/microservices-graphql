@@ -38,7 +38,7 @@ DNI|11111113|100000004|1001
 
 ## 2 GraphQL
 
-## Query 1: Listar cuentas por tipo y número de documento
+### Query 1: Listar cuentas por tipo y número de documento
 ```GraphQL
 query {
   accounts(data: { documentType: DNI, documentNumber: "11111111" }) {
@@ -48,4 +48,23 @@ query {
     amount
   }
 }
+```
+
+### Query 2: Listar cuentas + transacciones por tipo y número de documento
+```GraphQL
+query {
+  accounts(data: { documentType: DNI, documentNumber: "11111111" }) {
+    id
+    number
+    currency
+    amount
+    transactions {
+      id
+      type
+      amount
+      amount
+    }
+  }
+}
+
 ```

@@ -5,9 +5,9 @@
 docker compose -f ./ms-compose/docker-compose.yml up
 ```
 
-## 1 GraphQL
+## 1 Querys, Mutation y Subscription
 
-### Query 1: Listar cuentas por tipo y número de documento
+### Q1: Listar cuentas por tipo y número de documento
 ```GraphQL
 query {
   accounts(data: { documentType: DNI, documentNumber: "11111111" }) {
@@ -19,7 +19,7 @@ query {
 }
 ```
 
-### Query 2: Listar cuentas + transacciones por tipo y número de documento
+### Q2: Listar cuentas + transacciones por tipo y número de documento
 ```GraphQL
 query {
   accounts(data: { documentType: DNI, documentNumber: "11111111" }) {
@@ -38,7 +38,7 @@ query {
 
 ```
 
-### Query 3: Listar clientes, con cuentas y movimientos
+### Q3: Listar clientes, con cuentas y movimientos
 ```GraphQL
 query {
   customers {
@@ -53,6 +53,37 @@ query {
         amount
       }
     }
+  }
+}
+```
+
+### M1: Mutation - Crear cliente
+```GraphQL
+mutation {
+  createCustomer(
+    data: {
+      name: "Juan1"
+      lastName: "Perez"
+      createAt: "2021-06-30"
+      documentType: DNI
+      documentNumber: "12345678"
+    }
+  ) {
+    name
+    id
+    lastName
+    documentType
+  }
+}
+```
+
+### S1: Subcription - Crear cliente
+```GraphQL
+subscription {
+  customerChanged {
+    id
+    name
+    lastName
   }
 }
 ```

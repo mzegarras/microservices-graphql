@@ -26,3 +26,12 @@ DocumentType  | DocumentNumber  | LastName | FirstName
 DNI|11111111|Messi|Lionel
 DNI|11111112|Ronaldo|Cristiano
 DNI|11111113|Emape|Gillian
+
+### Accounts
+
+DocumentType  | DocumentNumber  | Número | Moneda
+------------- | ------------- | -------------| -------------
+DNI|11111111|100000001|1001
+DNI|11111111|100000002|1000
+DNI|11111112|100000003|1001
+DNI|11111113|100000004|1001

@@ -7,6 +7,10 @@ docker compose -f ./ms-compose/docker-compose.yml up
 
 ## 1 Querys, Mutation y Subscription
 
+### Parámetros:
+
+* Server: http://localhost:3001/graphql
+
 ### Q1: Listar cuentas por tipo y número de documento
 ```GraphQL
 query {

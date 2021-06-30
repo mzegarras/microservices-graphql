@@ -1,5 +1,7 @@
 # GraphQL - Server
 
+![Architecture](./resources/Architecture.png "Architecture")
+
 ## 0 Startup
 ```shell
 docker compose -f ./ms-compose/docker-compose.yml up

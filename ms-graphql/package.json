@@ -1,0 +1,24 @@
+{
+  "name": "graphq-basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./server.js",
+  "scripts": {
+    "start": "node ./server.js",
+    "start:watch": "nodemon ./src/server.js --ext js,graphql ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-datasource-rest": "^0.14.0",
+    "apollo-server-express": "^2.25.2",
+    "express": "^4.17.1",
+    "graphql": "^15.5.1",
+    "graphql-redis-subscriptions": "^2.4.0",
+    "subscriptions-transport-ws": "^0.9.19"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.7"
+  }
+}

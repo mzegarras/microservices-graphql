@@ -1,0 +1,44 @@
+
+server:
+  port: 8888
+
+logging.level:
+  root: INFO
+  web: DEBUG
+  org.springframework.cloud.config: INFO
+
+encrypt:
+  keyStore:
+    location: "file:/config-server.jks"
+    password: "${KEYSTORE_PWD}"
+    alias: "${KEYSTORE_ALIAS}"
+    secret: "${KEYSTORE_SECRET}"
+    type: jks
+
+spring:
+  devtools:
+    add-properties: true
+  application:
+    name: ms-configurations
+  cloud:
+    config:
+      retry:
+        max-attempts: 10
+        max-interval: 5000
+      server:
+        health:
+          enabled: false
+        encrypt:
+          enabled: false
+        git:
+          searchPaths: '{application}'
+          uri: ${GIT_URI}
+          ignoreLocalSshSettings: true
+          #hostKey: ${SSH_HOST_KEY}
+          #hostKeyAlgorithm: ${SSH_HOST_KEY_ALGORITHM}
+          #privateKey: ${PRIVATE_KEY}
+          username: ${GIT_USER}
+          password: ${GIT_PWD}
+          timeout: 30
+          force-pull: true
+        bootstrap: true

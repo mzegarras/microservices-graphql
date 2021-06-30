@@ -1,0 +1,5 @@
+### Get Accounts
+GET http://localhost:8082/accounts?type=DNI&number=11111111
+
+### Get transactions
+GET http://localhost:8082/accounts/100000002/transactions

@@ -1,0 +1,17 @@
+###
+GET http://localhost:8085/customers
+
+###
+GET http://localhost:8085/customers/DNI/11111112
+
+###
+POST http://localhost:8085/customers
+Content-Type: application/json
+
+{
+  "firstName": "Nicole",
+  "lastName": "Zegarra",
+  "createAt": "2020-10-01T11:57:17.837+00:00",
+  "documentType": "DNI",
+  "documentNumber": "07822902"
+}

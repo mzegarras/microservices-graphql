@@ -1,0 +1,72 @@
+type Query {
+    me: Customer!
+    customers: [Customer!]!
+    accounts(data:AccountsByDocument!): [Account!]!
+    transactions(data: TransactionsByAccountId): [Transaction!]!
+}
+
+type Mutation {
+    save: String
+    createCustomer(data: CreateCustomerInput!): Customer!
+}
+
+type Subscription{
+    customerChanged: Customer!
+}
+
+type Customer{
+    id: ID!
+    name: String!
+    lastName: String!
+    documentType: DocumentType!
+    documentNumber: String!
+    accounts: [Account!]!
+}
+
+type Transaction {
+    id: ID!
+    type: String!
+    description: String! 
+    amount: Float! 
+    currency: String! 
+    createAt: Date!
+}
+type Account{
+    id: ID!
+    number: String!
+    currency: String!
+    amount: Float
+    transactions: [Transaction!]!
+}
+
+type Document  {
+    type: String!
+    number: String!
+}
+
+scalar Date
+
+
+input AccountsByDocument {
+    documentType: DocumentType!
+    documentNumber: String!
+}
+
+input TransactionsByAccountId {
+    accountId: String!
+}
+
+
+input CreateCustomerInput {
+    name: String!
+    lastName: String!
+    createAt: Date!
+    documentType: DocumentType!
+    documentNumber: String!
+}
+
+enum DocumentType {
+    DNI
+    CE
+}
+

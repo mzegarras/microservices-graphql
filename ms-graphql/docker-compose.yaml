@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+    ms-graphql:
+      image: mzegarra/ms-graphql:graphql-v1.1
+      build: 
+        context: .
+        dockerfile: ./docker/Dockerfile
+      ports:
+        - 3000:3000
+      environment:
+        PORT: 3000
+        URL_API_ACCOUNT: 'http://localhost:8082/'
+        URL_API_CUSTOMER: 'http://localhost:8082/'
+        REDIS_HOST: 'ms-graphql-cache'
+        REDIS_PORT: 6379
+        REDIS_PASSWORD: 'password'
+    ms-graphql-cache:
+      image: redis:4-alpine
+      command: sh -c 'echo "requirepass password" | redis-server -'
+      ports:
+      -  6379:6379

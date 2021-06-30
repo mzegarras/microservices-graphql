@@ -1,0 +1,15 @@
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+
+#server.port: 8085
+
+spring.data:
+    mongodb:
+      host: localhost
+      username: accounts-user
+      password: pwd123456!
+      port: 27017
+      database: db
+      authentication-database: admin

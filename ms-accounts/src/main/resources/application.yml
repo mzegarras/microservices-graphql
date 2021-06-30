@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ms-accounts
+  config:
+    import: optional:configserver:${SERVER_CONFIG_URL:http://localhost:8888/}
+  cloud:
+    config:
+      fail-fast: ${SERVER_CONFIG_FAIL_FAST:true}
+      enabled: ${SERVER_CONFIG_ENABLED:false}
+      retry:
+        initialInterval: ${INITIAL_INTERVAL:10000}
+        multiplier: ${MULTIPLIER:1.1}
+        maxInterval: ${MAXINTERVAL:1}
+        maxAttempts: ${MAXATTEMPTS:1}
+

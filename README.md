@@ -1,6 +1,6 @@
 # GraphQL - Server
 
-## Startup
+## 0 Startup
 ```shell
 docker compose -f ./ms-compose/docker-compose.yml up
 ```

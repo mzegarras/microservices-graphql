@@ -1,6 +1,6 @@
 # GraphQL - Server
 
-## Microservices
+## 1 Microservices
 
 Nombre | Descripción
 ------------- | -------------
@@ -9,7 +9,7 @@ ms-accounts  | Microservicer accounts
 ms-customers  | Microservicer customers
 ms-graphql | GraphQL - Apollo Server
 
-### Endpoints
+### 1.1 Endpoints
 Microservice  | Descripción  | Endpoint
 ------------- | ------------- | -------------
 Accounts | Listar cuentas de un cliente| GET /accounts?type=DNI&number=11111111
@@ -17,7 +17,7 @@ Accounts | Listar transacciones por cuenta| GET accounts/\<accountId>/transactio
 Customers | Listar clientes| GET /customers
 Customers | Listar clientes| GET /customers/DNI/11111112
 
-### Data
+### 1.2 Data
 
 #### Customers
 

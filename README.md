@@ -1,5 +1,10 @@
 # GraphQL - Server
 
+## Startup
+```shell
+docker compose -f ./ms-compose/docker-compose.yml up
+```
+
 ## 1 Microservices
 
 Nombre | Descripción

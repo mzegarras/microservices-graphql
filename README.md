@@ -13,4 +13,4 @@ ms-graphql | GraphQL - Apollo Server
 Microservice  | Endpoint
 ------------- | -------------
 Listar cuentas| GET /accounts?type=DNI&number=11111111
-Listar transacciones por cuenta| GET accounts/\\<accountId\\>/transactions
+Listar transacciones por cuenta| GET accounts/<accountId>/transactions

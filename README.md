@@ -130,7 +130,7 @@ DNI|11111111|100000002|1000
 DNI|11111112|100000003|1001
 DNI|11111113|100000004|1001
 
-#### 2.2 Configuration server
+### Configuration server
 
 
 https://github.com/mzegarras/ms-configuration

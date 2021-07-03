@@ -134,3 +134,11 @@ DNI|11111113|100000004|1001
 
 
 https://github.com/mzegarras/ms-configuration
+
+
+
+
+## Sigientes ejemplos
+* Authorization server
+* Validación de cors
+* JWT

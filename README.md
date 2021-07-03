@@ -138,7 +138,7 @@ https://github.com/mzegarras/ms-configuration
 
 
 
-## Sigientes ejemplos
+## Siguientes ejemplos
 * Authorization server
 * Validación de cors
 * JWT

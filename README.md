@@ -4,7 +4,7 @@
 
 ## 0 Startup
 ```shell
-docker compose -f ./ms-compose/docker-compose.yml up
+docker compose -f ./deploy/compose/docker-compose.yml up
 ```
 
 ## 1 Querys, Mutation y Subscription

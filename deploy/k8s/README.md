@@ -23,7 +23,7 @@
     echo 'cGFzc3dvcmQ=' | base64 --decode
     ```
 
-## 1. Desplegar config server
+## 2. Desplegar ms-configuration
 
 1. Crear secret git credentials
     ```bash

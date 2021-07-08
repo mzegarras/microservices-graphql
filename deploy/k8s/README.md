@@ -41,3 +41,13 @@
     curl http://localhost:8888/encrypt -H 'Content-Type: text/plain' -d 'password'
     curl http://localhost:8888/decrypt -H 'Content-Type: text/plain' -d 'crifrado-paso-previo'
     ```
+
+## 3. Desplegar mongo databases
+
+1. Crear database mongo
+    ```bash
+    kubectl apply -f ./03-ms-accounts-db.yaml
+    kubectl apply -f ./03-ms-customers-db.yaml
+    ```
+
+    

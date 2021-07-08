@@ -23,5 +23,10 @@
     echo -n 'git-credentials' | base64
     echo 'cGFzc3dvcmQ=' | base64 --decode
     ```
-    
-## 1. Config-server
+1. Crear secret git credentials
+    ```bash
+    kubectl apply -f ./01-credentials.yaml
+    ```
+## 1. Desplegar config server
+
+

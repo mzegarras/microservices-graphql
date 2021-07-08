@@ -12,11 +12,3 @@ data:
     MULTIPLIER: "2.0"
     MAXINTERVAL: "30000"
     MAXATTEMPTS: "100"
-
-
-        GIT_URI: "https://github.com/mzegarras/ms-configuration.git"
-      GIT_USER: "mzegarra"
-      GIT_PWD: ""
-      KEYSTORE_PWD: "YOU_KEYSTORE_PASSWORD"
-      KEYSTORE_ALIAS: "YOU_CONFIG_SERVER_KEY"
-      KEYSTORE_SECRET: "YOU_KEYSTORE_PASSWORD"

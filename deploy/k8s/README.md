@@ -56,5 +56,28 @@
     kubectl apply -f ./04-ms-accounts.yaml
     kubectl apply -f ./04-ms-customers.yaml
     ```
+1. Test ms-accounts
+    ```bash
+    kubectl get pods
+    kubectl get svc
+    kubectl port-forward service/ms-accounts 8080:8080
 
-    
+    curl http://localhost:8080/accounts?type=DNI&number=11111111
+    curl http://localhost:8080/accounts/100000002/transactions
+    ```
+
+1. Test ms-customers
+    ```bash
+    kubectl get pods
+    kubectl get svc
+    kubectl port-forward service/ms-customers 8080:8080
+
+    curl http://localhost:8080/customers
+    curl http://localhost:8080/customers/DNI/11111112
+
+
+    curl -i -X POST -H "Content-Type: application/json" \
+        -d '{"firstName": "Luis","lastName": "Suarez","createAt": "2020-10-01T11:57:17.837+00:00","documentType": "DNI","documentNumber": "07822902"}' \
+        http://localhost:8080/customers
+
+    ```

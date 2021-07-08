@@ -4,7 +4,7 @@ metadata:
   name: mongo-secrets
 type: Opaque
 data:
-  username: Y3VzdG9tZXJzLXVzZXI=
+  username: YWNjb3VudHMtdXNlcg==
   password: cHdkMTIzNDU2IQ==
 ---
 apiVersion: v1

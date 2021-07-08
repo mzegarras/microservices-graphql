@@ -49,5 +49,12 @@
     kubectl apply -f ./03-ms-accounts-db.yaml
     kubectl apply -f ./03-ms-customers-db.yaml
     ```
+## 3. Desplegar microservices
+
+1. Crear database mongo
+    ```bash
+    kubectl apply -f ./04-ms-accounts.yaml
+    kubectl apply -f ./04-ms-customers.yaml
+    ```
 
     

@@ -128,10 +128,10 @@
     ### S1: Subcription - Crear cliente
     ```GraphQL
     subscription {
-    customerChanged {
-        id
-        name
-        lastName
-    }
+        customerChanged {
+            id
+            name
+            lastName
+            }
     }
     ```

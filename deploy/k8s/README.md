@@ -1,4 +1,4 @@
-# Kubernetes - [here](./resources/ppt.pdf) Presentación
+# Kubernetes - [Presentación](./resources/ppt.pdf) 
 
 ## 1. Settings iniciales
 1. Generar certificado

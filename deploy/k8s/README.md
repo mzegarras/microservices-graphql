@@ -37,7 +37,7 @@
     kubectl port-forward <<PODID>> 9060:8888
     kubectl port-forward service/configserver 8888:8888
 
-    curl http://localhost:8888/clientes/default
+    curl http://localhost:8888/ms-accounts/default
     curl http://localhost:8888/encrypt -H 'Content-Type: text/plain' -d 'password'
     curl http://localhost:8888/decrypt -H 'Content-Type: text/plain' -d 'crifrado-paso-previo'
     ```

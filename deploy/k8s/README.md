@@ -105,3 +105,33 @@
 
 ## 5. Querys GraphQL
 1. Ejemplos [GraphQL](https://github.com/mzegarras/microservices-graphql)
+1.  Ejemplos
+    ```GraphQL
+    mutation {
+    createCustomer(
+        data: {
+        name: "Juan1"
+        lastName: "Perez"
+        createAt: "2021-06-30"
+        documentType: DNI
+        documentNumber: "12345678"
+        }
+    ) {
+        name
+        id
+        lastName
+        documentType
+    }
+    }
+    ```
+
+    ### S1: Subcription - Crear cliente
+    ```GraphQL
+    subscription {
+    customerChanged {
+        id
+        name
+        lastName
+    }
+    }
+    ```

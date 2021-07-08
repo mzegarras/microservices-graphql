@@ -49,7 +49,7 @@
     kubectl apply -f ./03-ms-accounts-db.yaml
     kubectl apply -f ./03-ms-customers-db.yaml
     ```
-## 3. Desplegar microservices
+## 4. Desplegar microservices
 
 1. Crear database mongo
     ```bash
@@ -80,4 +80,10 @@
         -d '{"firstName": "Luis","lastName": "Suarez","createAt": "2020-10-01T11:57:17.837+00:00","documentType": "DNI","documentNumber": "07822902"}' \
         http://localhost:8080/customers
 
+    ```
+
+## 5. Desplegar GraphQL
+1. Crear redis
+    ```bash
+    kubectl apply -f ./05-graphql-cache.yaml
     ```

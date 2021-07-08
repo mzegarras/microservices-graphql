@@ -104,4 +104,4 @@
 
 
 ## 5. Querys GraphQL
-1. Querys [GraphQL](https://github.com/mzegarras/microservices-graphql) GraphQL
+1. Ejemplos [GraphQL](https://github.com/mzegarras/microservices-graphql)

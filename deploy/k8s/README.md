@@ -1,7 +1,4 @@
-# Kubernetes
-
-![Architecture](./resources/ppt.pdf "Presentación")
-
+# Kubernetes - [here](./resources/ppt.pdf) Presentación
 
 ## 1. Settings iniciales
 1. Generar certificado

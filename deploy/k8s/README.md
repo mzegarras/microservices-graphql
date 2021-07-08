@@ -96,3 +96,12 @@
     ```bash
     http://<<IP>>:3000/graphql
     ```
+
+1. Scalar pods
+    ```bash
+    kubectl scale deployments/graphql --replicas=4
+    ```
+
+
+## 5. Querys GraphQL
+    1. README Querys [GraphQL](https://github.com/mzegarras/microservices-graphql) GraphQL

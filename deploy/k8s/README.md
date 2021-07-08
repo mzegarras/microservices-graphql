@@ -1,8 +1,8 @@
 # Kubernetes
 
 
-## 1. Generar certificado
-
+## 1. Secrets
+## 1. Config-server
 1. Generar certificado
     ```bash
     keytool -genkeypair -alias YOU_CONFIG_SERVER_KEY \

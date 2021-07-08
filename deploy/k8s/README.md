@@ -87,3 +87,12 @@
     ```bash
     kubectl apply -f ./05-graphql-cache.yaml
     ```
+1. Desplegar Apollo-server
+    ```bash
+    kubectl apply -f ./05-GraphQL.yaml
+    ```
+
+1. Test GraphQL
+    ```bash
+    http://<<IP>>:3000/graphql
+    ```

@@ -34,6 +34,7 @@ public class AccountServiceImpl implements AccountService {
                             .id(document.getId())
                             .amount(document.getAmount())
                             .currency(document.getCurrency())
+                            .number(document.getNumber())
                             .document(DocumentType.builder()
                                         .documentNumber(document.getDocument().getDocumentNumber())
                                         .documentType(document.getDocument().getDocumentType())

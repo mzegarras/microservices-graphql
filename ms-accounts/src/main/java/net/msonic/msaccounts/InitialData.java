@@ -28,38 +28,45 @@ public class InitialData implements CommandLineRunner {
         accountRepository.deleteAll().subscribe();
         transactionRepository.deleteAll().subscribe();
 
-        AccountDocument d1 = new AccountDocument();
-        d1.setNumber("100000001");
-        d1.setDocument(new DocumentType());
-        d1.setCurrency("1001");
-        d1.getDocument().setDocumentType("DNI");
-        d1.getDocument().setDocumentNumber("11111111");
-        d1.setAmount(0);
+        AccountDocument d1 = AccountDocument.builder()
+                    .number("100000001")
+                    .currency("1001")
+                    .document(DocumentType.builder()
+                            .documentType("DNI")
+                            .documentNumber("11111111")
+                            .build())
+                    .build();
 
-        AccountDocument d2 = new AccountDocument();
-        d2.setNumber("100000002");
-        d2.setDocument(new DocumentType());
-        d2.setCurrency("1000");
-        d2.getDocument().setDocumentType("DNI");
-        d2.getDocument().setDocumentNumber("11111111");
-        d2.setAmount(0);
+        AccountDocument d2 = AccountDocument.builder()
+                .number("100000002")
+                .currency("1000")
+                .document(DocumentType.builder()
+                        .documentType("DNI")
+                        .documentNumber("11111111")
+                        .build())
+                .build();
 
 
-        AccountDocument d3 = new AccountDocument();
-        d3.setNumber("100000003");
-        d3.setDocument(new DocumentType());
-        d3.setCurrency("1001");
-        d3.getDocument().setDocumentType("DNI");
-        d3.getDocument().setDocumentNumber("11111112");
-        d3.setAmount(300d);
+        AccountDocument d3 = AccountDocument.builder()
+                .number("100000003")
+                .currency("1001")
+                .document(DocumentType.builder()
+                        .documentType("DNI")
+                        .documentNumber("11111112")
+                        .build())
+                .amount(300d)
+                .build();
 
-        AccountDocument d4= new AccountDocument();
-        d4.setNumber("100000004");
-        d4.setDocument(new DocumentType());
-        d4.setCurrency("1001");
-        d4.getDocument().setDocumentType("DNI");
-        d4.getDocument().setDocumentNumber("11111113");
-        d4.setAmount(400d);
+        AccountDocument d4 = AccountDocument.builder()
+                .number("100000004")
+                .currency("1001")
+                .document(DocumentType.builder()
+                        .documentType("DNI")
+                        .documentNumber("11111113")
+                        .build())
+                .amount(400d)
+                .build();
+
 
         List<AccountDocument> accounts = Arrays.asList(d1,d2,d3,d4);
         List<TransactionDocument> transactions = new ArrayList<>();
@@ -87,6 +94,22 @@ public class InitialData implements CommandLineRunner {
 
 
         for (int i = 0; i < 10; i++) {
+
+            TransactionDocument d2_mov01 = TransactionDocument.builder()
+                    .currency("1001")
+                    .date(sf.format(new Date()))
+                    .type("transfer_debit")
+                    .currency("10001")
+                    .amount((random.nextDouble() * (500 - 100)) + 100)
+                    .accountId(document.getNumber())
+                    .description("transfer")
+                    .build();
+
+
+            document.setAmount(document.getAmount()+d2_mov01.getAmount());
+            transactions.add(d2_mov01);
+
+            /*
             TransactionDocument d2_mov01 = new TransactionDocument();
             d2_mov01.setCurrency("1001");
             d2_mov01.setDate(sf.format(new Date()));
@@ -95,9 +118,9 @@ public class InitialData implements CommandLineRunner {
             d2_mov01.setAmount((random.nextDouble() * (500 - 100)) + 100);
             d2_mov01.setAccountId(document.getNumber());
             d2_mov01.setDescription("transfer");
-            document.setAmount(document.getAmount()+d2_mov01.getAmount());
+            document.setAmount(document.getAmount()+d2_mov01.getAmount());*/
 
-            transactions.add(d2_mov01);
+
         }
 
     }

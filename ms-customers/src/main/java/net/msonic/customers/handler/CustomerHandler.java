@@ -1,7 +1,7 @@
 package net.msonic.customers.handler;
 
 import lombok.AllArgsConstructor;
-import net.msonic.customers.dto.Customer;
+import net.msonic.customers.dto.CustomerDto;
 import net.msonic.customers.service.CustomerService;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -23,7 +23,7 @@ public class CustomerHandler {
 
         return ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(customerService.findAll(), Customer.class);
+                .body(customerService.findAll(), CustomerDto.class);
 
     }
 
@@ -44,7 +44,7 @@ public class CustomerHandler {
 
     public Mono<ServerResponse> create(ServerRequest rq) {
 
-        Mono<Customer> mono = rq.bodyToMono(Customer.class);
+        Mono<CustomerDto> mono = rq.bodyToMono(CustomerDto.class);
 
         return mono.flatMap(p-> customerService.save(p)
                 .flatMap(pdb -> ServerResponse

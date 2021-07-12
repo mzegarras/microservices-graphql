@@ -3,7 +3,7 @@ package net.msonic;
 import lombok.AllArgsConstructor;
 import net.msonic.customers.dto.DocumentType;
 import net.msonic.customers.repository.CustomerRepository;
-import net.msonic.customers.repository.document.CustomerDocument;
+import net.msonic.customers.model.CustomerDocument;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -22,26 +22,29 @@ public class InitialData implements CommandLineRunner {
 
         repository.deleteAll().subscribe();
 
-        CustomerDocument d1 = new CustomerDocument();
-        d1.setLastName("Messi");
-        d1.setFirstName("Lionel");
-        d1.setCreateAt(new Date());
-        d1.setDocumentType(DocumentType.DNI.getValue());
-        d1.setDocumentNumber("11111111");
+        CustomerDocument d1 = CustomerDocument.builder()
+                    .lastName("Messi")
+                    .firstName("Lionel")
+                    .createAt(new Date())
+                    .documentType(DocumentType.DNI.getValue())
+                    .documentNumber("11111111")
+                    .build();
 
-        CustomerDocument d2 = new CustomerDocument();
-        d2.setLastName("Ronaldo");
-        d2.setFirstName("Cristiano");
-        d2.setCreateAt(new Date());
-        d2.setDocumentType(DocumentType.DNI.getValue());
-        d2.setDocumentNumber("11111112");
+        CustomerDocument d2 = CustomerDocument.builder()
+                .lastName("Ronaldo")
+                .firstName("Cristiano")
+                .createAt(new Date())
+                .documentType(DocumentType.DNI.getValue())
+                .documentNumber("11111112")
+                .build();
 
-        CustomerDocument d3 = new CustomerDocument();
-        d3.setLastName("Emape");
-        d3.setFirstName("Gillian");
-        d3.setCreateAt(new Date());
-        d3.setDocumentType(DocumentType.DNI.getValue());
-        d3.setDocumentNumber("11111113");
+        CustomerDocument d3 = CustomerDocument.builder()
+                .lastName("Emape")
+                .firstName("Gillian")
+                .createAt(new Date())
+                .documentType(DocumentType.DNI.getValue())
+                .documentNumber("11111113")
+                .build();
 
         List<CustomerDocument> customers = Arrays.asList(d1,d2,d3);
 

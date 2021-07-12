@@ -2,8 +2,9 @@ package net.msonic.customers.service;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import net.msonic.customers.dto.Customer;
+import net.msonic.customers.dto.CustomerDto;
 import net.msonic.customers.dto.DocumentType;
+import net.msonic.customers.model.CustomerDocument;
 import net.msonic.customers.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -14,31 +15,64 @@ import reactor.core.publisher.Mono;
 @Slf4j
 public class CustomerServiceImpl implements CustomerService {
 
-    private final MapStructMapper mapper;
     private final CustomerRepository repository;
 
 
     @Override
-    public Flux<Customer> findAll() {
+    public Flux<CustomerDto> findAll() {
 
-        log.debug("findAll");
+        log.info("findAll");
 
         return repository.findAll()
-                .map(document -> mapper.customerToCustomerDto(document));
+                .map(document -> CustomerDto.builder()
+                            .id(document.getId())
+                            .firstName(document.getFirstName())
+                            .lastName(document.getLastName())
+                            .createAt(document.getCreateAt())
+                            .documentType(DocumentType.valueOf(document.getDocumentType()))
+                            .documentNumber(document.getDocumentNumber())
+                        .build());
     }
 
     @Override
-    public Mono<Customer> save(Customer customer) {
-        log.debug("save");
+    public Mono<CustomerDto> save(CustomerDto customerDto) {
+        log.info("save");
 
-        return repository.save(mapper.customerDtoToCustomer(customer))
-                .map(document -> mapper.customerToCustomerDto(document));
+
+        CustomerDocument customerDocument = CustomerDocument.builder()
+                                            .id(customerDto.getId())
+                                            .firstName(customerDto.getFirstName())
+                                            .lastName(customerDto.getLastName())
+                                            .createAt(customerDto.getCreateAt())
+                                            .documentType(customerDto.getDocumentType().getValue())
+                                            .documentNumber(customerDto.getDocumentNumber())
+                                            .build();
+
+        return repository.save(customerDocument)
+                .map(customerSaved -> CustomerDto.builder()
+                                                .id(customerSaved.getId())
+                                                .firstName(customerSaved.getFirstName())
+                                                .lastName(customerSaved.getLastName())
+                                                .createAt(customerSaved.getCreateAt())
+                                                .documentType(DocumentType.valueOf(customerSaved.getDocumentType()))
+                                                .documentNumber(customerSaved.getDocumentNumber())
+                                            .build());
+
     }
 
     @Override
-    public Mono<Customer> findByDocument(String documentType,String documentNumber) {
+    public Mono<CustomerDto> findByDocument(String documentType, String documentNumber) {
+        log.info("findByDocument: {} {}",documentType,documentNumber);
+
         return repository.findByDocumentTypeAndDocumentNumber(documentType,documentNumber)
-                .map(document -> mapper.customerToCustomerDto(document));
+                .map(document -> CustomerDto.builder()
+                        .id(document.getId())
+                        .firstName(document.getFirstName())
+                        .lastName(document.getLastName())
+                        .createAt(document.getCreateAt())
+                        .documentType(DocumentType.valueOf(document.getDocumentType()))
+                        .documentNumber(document.getDocumentNumber())
+                        .build());
     }
 
 

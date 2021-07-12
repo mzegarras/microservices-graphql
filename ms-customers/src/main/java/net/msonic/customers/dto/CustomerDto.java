@@ -1,15 +1,15 @@
 package net.msonic.customers.dto;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
-@Getter
-@Setter
-public class Customer {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class CustomerDto {
 
     private String id;
     private String firstName;

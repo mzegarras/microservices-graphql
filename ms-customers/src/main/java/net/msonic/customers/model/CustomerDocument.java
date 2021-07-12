@@ -1,9 +1,7 @@
-package net.msonic.customers.repository.document;
+package net.msonic.customers.model;
 
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -12,8 +10,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Document(collection = "productos")
-@Getter
-@Setter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class CustomerDocument implements Serializable {
 
     private static final long serialVersionUID = 5504238253021606174L;

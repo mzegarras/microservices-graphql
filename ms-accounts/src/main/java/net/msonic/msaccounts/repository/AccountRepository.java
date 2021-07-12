@@ -1,7 +1,7 @@
 package net.msonic.msaccounts.repository;
 
-import net.msonic.msaccounts.repository.document.AccountDocument;
-import net.msonic.msaccounts.repository.document.DocumentType;
+import net.msonic.msaccounts.model.AccountDocument;
+import net.msonic.msaccounts.model.DocumentType;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import reactor.core.publisher.Flux;
 

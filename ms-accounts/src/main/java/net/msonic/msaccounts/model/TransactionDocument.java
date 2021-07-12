@@ -1,16 +1,17 @@
-package net.msonic.msaccounts.repository.document;
+package net.msonic.msaccounts.model;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 
 @Document(collection = "transactions")
-@Getter
-@Setter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class TransactionDocument implements Serializable {
 
     private static final long serialVersionUID = 4064171862724231847L;

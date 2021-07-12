@@ -1,12 +1,13 @@
 package net.msonic.msaccounts.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
 
-@Getter
-@Setter
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class DocumentType implements Serializable {
 
     private static final long serialVersionUID = -8173384859073325589L;

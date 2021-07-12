@@ -5,9 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.msonic.msaccounts.repository.AccountRepository;
 import net.msonic.msaccounts.repository.TransactionRepository;
-import net.msonic.msaccounts.repository.document.AccountDocument;
-import net.msonic.msaccounts.repository.document.DocumentType;
-import net.msonic.msaccounts.repository.document.TransactionDocument;
+import net.msonic.msaccounts.model.AccountDocument;
+import net.msonic.msaccounts.model.DocumentType;
+import net.msonic.msaccounts.model.TransactionDocument;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

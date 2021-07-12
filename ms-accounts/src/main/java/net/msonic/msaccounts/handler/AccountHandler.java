@@ -23,9 +23,10 @@ public class AccountHandler {
         String type = rq.queryParam("type").orElse("");
         String number = rq.queryParam("number").orElse("");
 
-        DocumentType  documentType = new DocumentType();
-        documentType.setDocumentType(type);
-        documentType.setDocumentNumber(number);
+        DocumentType documentType = DocumentType.builder()
+                .documentType(type)
+                .documentNumber(number)
+                .build();
 
         return ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)

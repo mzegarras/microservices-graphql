@@ -20,7 +20,9 @@ type Customer{
     lastName: String!
     documentType: DocumentType!
     documentNumber: String!
+    adress: String!
     accounts: [Account!]!
+    avatar: String!
 }
 
 type Transaction {
@@ -37,6 +39,7 @@ type Account{
     currency: String!
     amount: Float
     transactions: [Transaction!]!
+    avatar: String!
 }
 
 type Document  {

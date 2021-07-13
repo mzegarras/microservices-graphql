@@ -43,7 +43,9 @@ class CustomerAPI extends RESTDataSource {
         name: customer.firstName,
         lastName: customer.lastName,
         documentType: customer.documentType,
-        documentNumber: customer.documentNumber
+        documentNumber: customer.documentNumber,
+        adress: customer.adress,
+        avatar: customer.avatar
       }
     }
   }

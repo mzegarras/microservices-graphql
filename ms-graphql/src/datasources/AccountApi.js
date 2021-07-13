@@ -27,6 +27,7 @@ class AccountAPI extends RESTDataSource {
         number: account.number,
         currency: account.currency,
         amount: account.amount,
+        avatar: account.avatar,
         document: {
           type: account.document.documentType,
           number: account.document.documentNumber

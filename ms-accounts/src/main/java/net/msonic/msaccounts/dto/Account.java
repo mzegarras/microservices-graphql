@@ -14,5 +14,6 @@ public class Account {
     private DocumentType document;
     private String currency;
     private double amount;
+    private String avatar;
 
 }

@@ -30,6 +30,7 @@ public class CustomerServiceImpl implements CustomerService {
                             .lastName(document.getLastName())
                             .createAt(document.getCreateAt())
                             .adress(document.getAdress())
+                            .avatar(document.getAvatar())
                             .documentType(DocumentType.valueOf(document.getDocumentType()))
                             .documentNumber(document.getDocumentNumber())
                         .build());
@@ -48,6 +49,7 @@ public class CustomerServiceImpl implements CustomerService {
                                             .documentType(customerDto.getDocumentType().getValue())
                                             .documentNumber(customerDto.getDocumentNumber())
                                             .adress(customerDto.getAdress())
+                                            .avatar(customerDto.getAvatar())
                                             .build();
 
         return repository.save(customerDocument)
@@ -59,6 +61,7 @@ public class CustomerServiceImpl implements CustomerService {
                                                 .adress(customerDto.getAdress())
                                                 .documentType(DocumentType.valueOf(customerSaved.getDocumentType()))
                                                 .documentNumber(customerSaved.getDocumentNumber())
+                                                .avatar(customerSaved.getAvatar())
                                             .build());
 
     }
@@ -76,6 +79,7 @@ public class CustomerServiceImpl implements CustomerService {
                         .documentType(DocumentType.valueOf(document.getDocumentType()))
                         .documentNumber(document.getDocumentNumber())
                         .adress(document.getAdress())
+                        .avatar(document.getAvatar())
                         .build());
     }
 

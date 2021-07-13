@@ -16,6 +16,7 @@ public class CustomerDto {
     private String lastName;
     private DocumentType documentType;
     private String documentNumber;
+    private String adress;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @EqualsAndHashCode.Exclude

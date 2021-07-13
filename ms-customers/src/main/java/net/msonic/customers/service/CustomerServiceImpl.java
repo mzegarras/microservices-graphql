@@ -29,6 +29,7 @@ public class CustomerServiceImpl implements CustomerService {
                             .firstName(document.getFirstName())
                             .lastName(document.getLastName())
                             .createAt(document.getCreateAt())
+                            .adress(document.getAdress())
                             .documentType(DocumentType.valueOf(document.getDocumentType()))
                             .documentNumber(document.getDocumentNumber())
                         .build());
@@ -46,6 +47,7 @@ public class CustomerServiceImpl implements CustomerService {
                                             .createAt(customerDto.getCreateAt())
                                             .documentType(customerDto.getDocumentType().getValue())
                                             .documentNumber(customerDto.getDocumentNumber())
+                                            .adress(customerDto.getAdress())
                                             .build();
 
         return repository.save(customerDocument)
@@ -54,6 +56,7 @@ public class CustomerServiceImpl implements CustomerService {
                                                 .firstName(customerSaved.getFirstName())
                                                 .lastName(customerSaved.getLastName())
                                                 .createAt(customerSaved.getCreateAt())
+                                                .adress(customerDto.getAdress())
                                                 .documentType(DocumentType.valueOf(customerSaved.getDocumentType()))
                                                 .documentNumber(customerSaved.getDocumentNumber())
                                             .build());
@@ -72,6 +75,7 @@ public class CustomerServiceImpl implements CustomerService {
                         .createAt(document.getCreateAt())
                         .documentType(DocumentType.valueOf(document.getDocumentType()))
                         .documentNumber(document.getDocumentNumber())
+                        .adress(document.getAdress())
                         .build());
     }
 

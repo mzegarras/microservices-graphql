@@ -25,6 +25,7 @@ public class CustomerDocument implements Serializable {
     private String lastName;
     private String documentType;
     private String documentNumber;
+    private String adress;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @EqualsAndHashCode.Exclude

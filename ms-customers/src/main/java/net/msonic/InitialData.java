@@ -28,6 +28,7 @@ public class InitialData implements CommandLineRunner {
                     .createAt(new Date())
                     .documentType(DocumentType.DNI.getValue())
                     .documentNumber("11111111")
+                    .adress("Calle Millonarios 1")
                     .build();
 
         CustomerDocument d2 = CustomerDocument.builder()
@@ -36,6 +37,7 @@ public class InitialData implements CommandLineRunner {
                 .createAt(new Date())
                 .documentType(DocumentType.DNI.getValue())
                 .documentNumber("11111112")
+                .adress("Calle Millonarios 2")
                 .build();
 
         CustomerDocument d3 = CustomerDocument.builder()
@@ -44,6 +46,7 @@ public class InitialData implements CommandLineRunner {
                 .createAt(new Date())
                 .documentType(DocumentType.DNI.getValue())
                 .documentNumber("11111113")
+                .adress("Calle Millonarios 2")
                 .build();
 
         List<CustomerDocument> customers = Arrays.asList(d1,d2,d3);
